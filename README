@@ -1,0 +1,89 @@
+NAME
+    PDT::Config - Base class for PDT configuration objects.
+
+*EARLY STAGE WARNING*
+    This module is currently in the early stages. For the latest please
+    check the github page at <http://github.com/exodist/PDT>
+
+DESCRIPTION
+    The base class for all PDT configuration objects.
+
+SYNOPSYS
+        package App::PDT::MyClass::Config;
+        use strict;
+        use warnings;
+
+        use base 'PDT::Config';
+
+        sub defaults {{ key => 'value' }}
+        sub configs {[ '/path/to/config.yaml', ... ]}
+        sub params {[qw/ param1 param2 ... /]}
+
+        __PACKAGE__->subclass;
+
+        1;
+
+    OVERRIDABLE CLASS METHODS
+        These are class methods you usually want to override.
+
+        $class->defaults()
+            Returns a hash with key value pairs to act as default config
+            options.
+
+        $class->configs()
+            Returns a list of default locations for config files.
+
+        $class->params()
+            Returns a list fo all params recognised by this config class.
+
+SPECIAL CLASS METHODS
+    __PACKAGE__->subclass()
+        Should always be called using your subclass. This method will create
+        accessor methods for all parameters spefied in your overriden
+        params() method.
+
+CONSTRUCTOR
+    $class->new( %overrides, file => 'path/to/config.yaml' )
+        Create a new instance. Parameters should be key => 'value'. A config
+        file can be specified using the 'file' key.
+
+OBJECT METHODS
+    $obj->param( $name, $value )
+        Get/Override the value of the parameter.
+
+        $name is mandatory, $value is optional.
+
+        Sources values in this order, if a source is 'undef' it will move on
+        to the next.
+
+        1. overrides 2. config file 3. defaults
+
+    $obj->overrides()
+        Returns the overrides hash.
+
+    $obj->config()
+        Returns the hash read from the config file.
+
+AUTHORS
+    Chad Granum exodist7@gmail.com
+
+COPYRIGHT
+    Copyright (C) 2010 Chad Granum
+
+    PDT-Config is free software; Standard perl licence.
+
+    PDT-Config is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the license for
+    more details.
+
+POD ERRORS
+    Hey! The above document had some coding errors, which are explained
+    below:
+
+    Around line 44:
+        '=item' outside of any '=over'
+
+    Around line 70:
+        You forgot a '=back' before '=head1'
+

@@ -1,0 +1,8 @@
+lib/PDT/Config.pm
+MANIFEST			This list of files
+MANIFEST.SKIP
+META.yml
+PDT-Config-0.001.tar.gz
+README
+t/010-Config.t
+t/res/conf.yaml
