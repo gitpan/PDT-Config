@@ -1,5 +1,5 @@
 ^MYMETA.yml$
 _build
 blib
-Build
+^Build$
 .git

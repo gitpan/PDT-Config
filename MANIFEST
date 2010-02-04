@@ -1,6 +1,6 @@
+Build.PL
 lib/PDT/Config.pm
 MANIFEST			This list of files
-MANIFEST.bak
 MANIFEST.SKIP
 META.yml
 README

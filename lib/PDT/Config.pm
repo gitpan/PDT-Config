@@ -37,7 +37,7 @@ The base class for all PDT configuration objects.
 
 #}}}
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 use YAML::Syck qw/LoadFile/;
 
