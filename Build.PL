@@ -10,6 +10,7 @@ my $build = Module::Build->new(
     create_readme => 1,
     requires    => {
         'Exporter' => 0,
+        'YAML::Syck' => 0,
     },
     build_requires => {
         'Test::Exception' => 0,

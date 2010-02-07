@@ -17,9 +17,10 @@ name: PDT-Config
 provides:
   PDT::Config:
     file: lib/PDT/Config.pm
-    version: 0.002
+    version: 0.003
 requires:
   Exporter: 0
+  YAML::Syck: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.002
+version: 0.003
